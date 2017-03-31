@@ -35,6 +35,7 @@ public class Television extends Electrodomestico{
         this.resolucion = 20;
         this.tdt = false;
     }
+    
 /**
  * metodo que calcula el precio final del televisor
  */
