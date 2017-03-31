@@ -40,8 +40,11 @@ public class Lavadora extends Electrodomestico{
  * metodo que calcula el precio final de la lavadora
  */
     @Override
-    public void precioFinal(){
-        
+    public double precioFinal(){
+        if(carga>30){
+            precio+=50;
+        }//if
+        return precio;
     }//precioFinal
 /**
  * retorna el valor de la carga
