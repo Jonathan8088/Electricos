@@ -27,11 +27,11 @@ public class Electronicos {
         Electrodomestico[]  electrodomesticos= new Electrodomestico[10];
         Electrodomestico tele1 = new Television(50,true,180,Color.GRIS,Consumo.A,80);
         Electrodomestico lava1 = new Lavadora(50,200,80);
-        Electrodomestico tele2 = new Television(50,true,150,Color.AZUL,Consumo.A,80);
+        Electrodomestico tele2 = new Television(50,true,150,Color.AZUL,Consumo.B,80);
         Electrodomestico lava2 = new Lavadora(50,300,80);
-        Electrodomestico tele3 = new Television(50,false,100,Color.GRIS,Consumo.A,80);
+        Electrodomestico tele3 = new Television(50,false,100,Color.GRIS,Consumo.C,80);
         Electrodomestico lava3 = new Lavadora(50,190,80);
-        Electrodomestico tele4 = new Television(50,true,150,Color.BLANCO,Consumo.A,80);
+        Electrodomestico tele4 = new Television(50,true,150,Color.BLANCO,Consumo.E,80);
         Electrodomestico lava4 = new Lavadora(50,150,80);
         Electrodomestico tele5 = new Television();
         Electrodomestico lava5 = new Lavadora();
