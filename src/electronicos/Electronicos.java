@@ -17,10 +17,8 @@ public class Electronicos {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Electrodomestico electricos =new Electrodomestico() {};
-        Electrodomestico[] el = null;
-        electricos = el[10];
-
+        Electrodomestico elec = new Television(50,true,100,Color.GRIS,Consumo.A,80);
+        System.out.println("el precio es: "+elec.precioFinal());
     }
 
 }
