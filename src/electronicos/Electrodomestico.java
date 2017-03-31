@@ -15,19 +15,19 @@ public abstract class Electrodomestico implements Electricos{
     /**
      * atributo que cotiene el precio
      */
-    protected double precio=100;
+    protected double precio;
     /**
      * atributo que contiene el color
      */
-    private Color color=Color.BLANCO ;
+    protected Color color;
     /**
      * atributo qeu contiene el consumo energetico
      */
-    private Consumo consumo=Consumo.F;
+    protected Consumo consumo;
     /**
      * atributo que contiene el peso
      */
-    private double peso=5;
+    protected double peso;
     
     private Consumo letra;
    
@@ -36,6 +36,10 @@ public abstract class Electrodomestico implements Electricos{
  * construcor de la clase
  */
     public Electrodomestico() {
+        precio=100;
+        peso=5;
+        color=color.BLANCO;
+        consumo=consumo.F;
     }//constructor
     
     
@@ -45,8 +49,10 @@ public abstract class Electrodomestico implements Electricos{
  * @param peso 
  */
     public Electrodomestico(double precio, double peso) {
-        this.precio = 100;
-        this.peso = 5;
+        this.precio = precio;
+        this.peso = peso;
+        color=color.BLANCO;
+        consumo=consumo.F;
     }
 /**
  * constructor con todos los atributos
@@ -69,10 +75,17 @@ public abstract class Electrodomestico implements Electricos{
  */
     protected boolean comprobarConsumoEnergetico(Consumo letra){
         this.letra=letra;
+        boolean valido;
         if(letra==consumo.A ||letra == consumo.B||letra == consumo.C||letra == consumo.D||letra == consumo.E||letra == consumo.F){
-            return true;
+            valido= true;
         }//IF
         else{
+            System.out.println("Color no valido");
+            valido= false;
+        }//else
+        if(valido==true){
+            return true;
+        }else{
             System.out.println("Color no valido");
             return false;
         }
@@ -84,12 +97,19 @@ public abstract class Electrodomestico implements Electricos{
      */
     protected boolean comprobarColor(Color comprueba){
         this.comprueba=comprueba;
+        boolean valido;
         if(color==color.azul || color == color.blanco|| color == color.gris|| color == color.negro|| color == color.rojo|| color == color.AZUL|| color == color.BLANCO|| color == color.GRIS|| color == color.NEGRO|| color == color.ROJO){
-            return true;
+            valido= true;
         }//if
         else{
-                return false;
-                }        
+                valido = false;
+                }       
+        if(valido=true){
+            return true;
+        }else{
+            System.out.println("Consumo no valido");
+            return false;
+        }
     }//comprobarColor
     /**
      * metodo que calcula el precio final
