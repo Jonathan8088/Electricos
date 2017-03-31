@@ -5,6 +5,8 @@
  */
 package electronicos;
 
+
+
 /**
  *
  * @author Jonathan
@@ -15,7 +17,10 @@ public class Electronicos {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Electrodomestico electricos =new Electrodomestico() {};
+        Electrodomestico[] el = null;
+        electricos = el[10];
+
     }
-    
+
 }
