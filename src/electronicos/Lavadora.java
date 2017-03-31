@@ -14,6 +14,8 @@ public class Lavadora extends Electrodomestico{
      * atributo que contiene la carga de la lavadora
      */
     private  int carga;
+    
+    private int CARGADEFECTO=5;
 /**
  * constructor con el precio y peso
  * @param precio
@@ -32,6 +34,8 @@ public class Lavadora extends Electrodomestico{
         super(precio, peso);
         this.carga = carga;
     }
+
+    
 /**
  * metodo que calcula el precio final de la lavadora
  */
