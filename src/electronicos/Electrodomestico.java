@@ -15,7 +15,7 @@ public abstract class Electrodomestico implements Electricos{
     /**
      * atributo que cotiene el precio
      */
-    private double precio=100;
+    protected double precio=100;
     /**
      * atributo que contiene el color
      */
@@ -62,7 +62,11 @@ public abstract class Electrodomestico implements Electricos{
         this.peso = peso;
     }
 
-
+/**
+ * metodo que recibe una letra y comprueba si esta dentro de los valores del consumo electrico o no
+ * @param letra
+ * @return true o false
+ */
     protected boolean comprobarConsumoEnergetico(Consumo letra){
         this.letra=letra;
         if(letra==consumo.A ||letra == consumo.B||letra == consumo.C||letra == consumo.D||letra == consumo.E||letra == consumo.F){
@@ -73,7 +77,11 @@ public abstract class Electrodomestico implements Electricos{
             return false;
         }
     }//comprobarConsumoEnergetico
-    
+    /**
+     * metodo que recibe un parametro de color y compruba si es valido o no
+     * @param comprueba
+     * @return ttrue o false
+     */
     protected boolean comprobarColor(Color comprueba){
         this.comprueba=comprueba;
         if(color==color.azul || color == color.blanco|| color == color.gris|| color == color.negro|| color == color.rojo|| color == color.AZUL|| color == color.BLANCO|| color == color.GRIS|| color == color.NEGRO|| color == color.ROJO){
@@ -83,10 +91,37 @@ public abstract class Electrodomestico implements Electricos{
                 return false;
                 }        
     }//comprobarColor
-    
+    /**
+     * metodo que calcula el precio final
+     */
     @Override
-    public void precioFinal(){
+    public double precioFinal(){
+       if(peso>=0 || peso<=19){
+           precio+=10;
+       }//if
+       else if(peso >=20 || peso<=49){
+           precio+=50;
+       }else if(peso >=50 || peso <=79){
+           precio+=80;
+       }else if(peso >80){
+           precio+=100;
+       }//if
        
+       if(consumo==consumo.A){
+           precio+=100;
+       }else if(consumo == consumo.B){
+           precio+=80;
+       }else if(consumo == consumo.C){
+           precio+=60;
+       }else if(consumo==consumo.D){
+           precio+=50;
+       }else if(consumo== consumo.E){
+           precio+=30;
+       }else if(consumo==consumo.F){
+           precio+=10;
+       }//if
+       
+       return precio;
     }//precioFinal
     
     /**
