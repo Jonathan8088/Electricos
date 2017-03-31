@@ -35,7 +35,7 @@ public class Television extends Electrodomestico{
         this.precio=precio;
         this.peso=peso;
         consumo=consumo.F;
-        color=color.BLANCO
+        color=color.BLANCO;
     }
 /**
  * constructor con los atributos propios y precio y peso heredados
