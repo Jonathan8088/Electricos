@@ -18,6 +18,13 @@ public class Television extends Electrodomestico{
      * atributo que señala si el televisor tiene codificadorTDT o no
      */
     private boolean tdt;
+    /**
+     * constructor por defecto
+     */
+    public Television(){
+        resolucion=20;
+        tdt=false;
+    }
 /**
  * constructor con precio y peso
  * @param precio
@@ -25,6 +32,10 @@ public class Television extends Electrodomestico{
  */
     public Television(double precio, double peso) {
         super(precio, peso);
+        this.precio=precio;
+        this.peso=peso;
+        consumo=consumo.F;
+        color=color.BLANCO
     }
 /**
  * constructor con los atributos propios y precio y peso heredados
@@ -35,6 +46,8 @@ public class Television extends Electrodomestico{
  */
     public Television(int resolucion, boolean tdt, double precio, double peso) {
         super(precio, peso);
+        this.precio=precio;
+        this.peso=peso;
         this.resolucion = resolucion;
         this.tdt = tdt;
     }
@@ -49,13 +62,13 @@ public class Television extends Electrodomestico{
  */
     public Television(int resolucion, boolean tdt, double precio, Color color, Consumo consumo, double peso) {
         super(precio, color, consumo, peso);
+        this.precio=precio;
+        this.color=color;
+        this.consumo=consumo;
         this.resolucion = resolucion;
         this.tdt = tdt;
     }
 
-    
-    
-    
 /**
  * metodo que calcula el precio final del televisor
  */
