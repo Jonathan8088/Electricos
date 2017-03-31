@@ -27,21 +27,47 @@ public class Television extends Electrodomestico{
         super(precio, peso);
     }
 /**
- * constructor con resolucion y tdt
+ * constructor con los atributos propios y precio y peso heredados
  * @param resolucion
- * @param tdt 
+ * @param tdt
+ * @param precio
+ * @param peso 
  */
-    public Television(int resolucion, boolean tdt) {
-        this.resolucion = 20;
-        this.tdt = false;
+    public Television(int resolucion, boolean tdt, double precio, double peso) {
+        super(precio, peso);
+        this.resolucion = resolucion;
+        this.tdt = tdt;
     }
+/**
+ * constructor con los atributos propios y heredados
+ * @param resolucion
+ * @param tdt
+ * @param precio
+ * @param color
+ * @param consumo
+ * @param peso 
+ */
+    public Television(int resolucion, boolean tdt, double precio, Color color, Consumo consumo, double peso) {
+        super(precio, color, consumo, peso);
+        this.resolucion = resolucion;
+        this.tdt = tdt;
+    }
+
+    
+    
     
 /**
  * metodo que calcula el precio final del televisor
  */
     @Override
-    public void precioFinal(){
-        
+    public double precioFinal(){
+        if(resolucion>40){
+            precio=(precio*.3)+precio;
+        }
+        if(tdt=true){
+            precio+=50;
+        }
+        return precio;
     }
 /**
  * retorna el valor de la recolucion
@@ -51,12 +77,13 @@ public class Television extends Electrodomestico{
         return resolucion;
     }
 /**
- * retorna si el televisor tiene codificador TDT o no
- * @return 
+ * retornaa si el televisor tiene codificador tdt o no
+ * @return tdt
  */
     public boolean isTdt() {
         return tdt;
     }
+
     
     
 }//Television
